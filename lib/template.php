@@ -23,7 +23,9 @@ class Template {
         extract($this->vars);
         chdir(dirname($this->template));
         ob_start();
+        
         include basename($this->template);
+
         return ob_get_clean();
     }
 }
